@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="utf-8">
+                <title>CKEditor</title>
+                <script src="assets/ckeditor.js"></script>
+                <!-- <script src="index.js"></script> -->
+                <script src="../node_modules/table-dragger/dist/table-dragger.js"></script>
+
+        </head>
+        <body>
+                <div contenteditable="true" name="editor1">
+
+                </div>
+                <script>
+                    let editor = CKEDITOR.replace( 'editor1', {
+                        // Load the Simple Box plugin.
+                        extraPlugins: 'simplebox',
+                        removePlugins: 'list,table,tableresize,tableselection,tabletools'
+                    } );
+                    editor.on('instanceReady', () => { 
+                        editor.widgets.onWidget('simplebox', 'ready', (a,b,c) => { 
+                            console.log('ready', a, b, c);
+                            // var table = editor.document.getById('table') 
+                            // callDraggable(table)
+                            var table = editor.document.getById('table') .$
+                            var dragger = tableDragger.default(table, {
+                            mode: "column",
+                            dragHandler: ".handle",
+                            onlyBody: true
+                            });
+
+                            dragger.on("drop", function(from, to) {
+                            console.log(from);
+                            console.log(to);
+                            });
+                        })
+                    })              
+                </script>
+        </body>
+</html>
