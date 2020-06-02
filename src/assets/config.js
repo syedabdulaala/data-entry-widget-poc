@@ -3,19 +3,24 @@
  * For licensing, see https://ckeditor.com/legal/ckeditor-oss-license
  */
 
-CKEDITOR.editorConfig = function( config ) {
+CKEDITOR.disableAutoInline = true;
+CKEDITOR.editorConfig = function (config) {
 	// Define changes to default configuration here.
 	// For complete reference see:
 	// https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html
+	disableAutoInline = true;
+	config.extraPlugins = 'simplebox';
+	config.removePlugins = 'list,table,tableresize,tableselection,tabletools';
+	config.allowedContent = true;
 
 	// The toolbar groups arrangement, optimized for a single toolbar row.
 	config.toolbarGroups = [
-		{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
-		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
-		{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
+		{ name: 'document', groups: ['mode', 'document', 'doctools'] },
+		{ name: 'clipboard', groups: ['clipboard', 'undo'] },
+		{ name: 'editing', groups: ['find', 'selection', 'spellchecker'] },
 		{ name: 'forms' },
-		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
+		{ name: 'basicstyles', groups: ['basicstyles', 'cleanup'] },
+		{ name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi'] },
 		{ name: 'links' },
 		{ name: 'insert' },
 		{ name: 'styles' },

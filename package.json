@@ -1,0 +1,22 @@
+{
+  "name": "dataentrywidgetpoc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syedabdulaala/data-entry-widget-poc.git"
+  },
+  "author": "Syed Abdul Aala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/syedabdulaala/data-entry-widget-poc/issues"
+  },
+  "homepage": "https://github.com/syedabdulaala/data-entry-widget-poc#readme",
+  "dependencies": {
+    "table-dragger": "^1.0.3"
+  }
+}
